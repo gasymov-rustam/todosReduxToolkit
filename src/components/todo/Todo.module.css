@@ -1,0 +1,45 @@
+.wrapper {
+  padding: 8px 16px;
+  width: fit-content;
+  border: 1px solid rgb(196, 107, 107);
+  flex-shrink: 0;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #ebecf0;
+  margin-bottom: 20px;
+}
+
+.title,
+.body,
+.btn {
+  color: #172b4d;
+  font-weight: 500;
+  padding: 4px 8px;
+  min-height: 25px;
+}
+
+.title {
+  text-align: center;
+  font-style: italic;
+}
+
+.btn {
+  margin-top: 5px;
+  border-radius: 5px;
+  background: rgb(164, 220, 238);
+  border: none;
+  transition: 0.5s;
+  font-size: 1.1em;
+  padding: 6px 8px;
+}
+
+.btn:hover {
+  background: rgb(170, 192, 199);
+}
+
+.time {
+  color: darkgreen;
+  min-height: 10px;
+}

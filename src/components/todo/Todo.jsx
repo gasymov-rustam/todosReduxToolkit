@@ -1,5 +1,6 @@
 import cn from "./Todo.module.css";
-import { fetchDeleteTodo, fetchUpdateTodo } from "../../toolkit/todosSlice";
+import { fetchDeleteTodo } from "../../toolkit/fetchDeleteTodo";
+import { fetchUpdateTodo } from "../../toolkit/fetchUpdateTodo";
 import { useDispatch } from "react-redux";
 
 export default function Todo({ todo }) {

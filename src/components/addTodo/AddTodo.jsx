@@ -1,7 +1,7 @@
 import styles from "./AddTodo.module.css";
 import { useState } from "react";
-import { fetchAddTodo } from "../../toolkit/todosSlice";
 import { useDispatch } from "react-redux";
+import { fetchAddTodo } from "../../toolkit/fetchAddTodo";
 
 export default function AddTodo() {
   const [open, setOpen] = useState(false);

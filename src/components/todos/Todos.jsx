@@ -1,16 +1,18 @@
 import cn from "./Todos.module.css";
 import Todo from "../todo/Todo";
 import { useEffect } from "react";
-import { fetchGetTodos, todosState } from "../../toolkit/todosSlice";
+import { todosState } from "../../toolkit/todosSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { fetchGetTodos } from "../../toolkit/fetchGetTodos";
 
 export default function Todos({ status }) {
   const dispatch = useDispatch();
   const todosData = useSelector(todosState);
   status = +status;
   useEffect(() => {
-    dispatch(fetchGetTodos());
+    // dispatch(fetchGetTodos());
+    dispatch(fetchGetTodos())
   }, [dispatch]);
 
   return (

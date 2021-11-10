@@ -1,18 +1,14 @@
 import cn from "./Todo.module.css";
-import { useTodos } from "../../hooks/useTodos";
-import { updateTodo, deleteTodo } from "../../api/todos";
+import { fetchDeleteTodo, fetchUpdateTodo } from "../../toolkit/todosSlice";
+import { useDispatch } from "react-redux";
+
 export default function Todo({ todo }) {
-  const [, dispatch] = useTodos();
-  async function setNextStatus() {
-    const [updatedTodo, updatedTodoError] = await updateTodo(todo.id, {
-      status: todo.status + 1,
-      updatedAt: Date.now(),
-    });
-    if (!updatedTodoError) dispatch({ type: "NEXT_STATUS", payload: updatedTodo });
+  const dispatch = useDispatch();
+  function setNextStatus() {
+    dispatch(fetchUpdateTodo(todo));
   }
-  async function deleteFromTodo() {
-    const [, deletedTodoError] = await deleteTodo(todo.id);
-    if (!deletedTodoError) dispatch({ type: "DELETE", payload: todo.id });
+  function deleteFromTodo() {
+    dispatch(fetchDeleteTodo(todo.id));
   }
   return (
     <div className={cn.wrapper}>

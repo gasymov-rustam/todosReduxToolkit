@@ -1,19 +1,18 @@
 import cn from "./Todos.module.css";
 import Todo from "../todo/Todo";
-import { useTodos } from "../../hooks/useTodos";
 import { useEffect } from "react";
 import { fetchGetTodos, todosState } from "../../toolkit/todosSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 export default function Todos({ status }) {
-  // const [todos] = useTodos();
   const dispatch = useDispatch();
   const todosData = useSelector(todosState);
+  status = +status;
   useEffect(() => {
     dispatch(fetchGetTodos());
-  }, []);
-  status = +status;
+  }, [dispatch]);
+
   return (
     <>
       {todosData.todos.filter((todo) => todo.status === status).length > 0 && (

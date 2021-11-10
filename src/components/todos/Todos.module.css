@@ -12,7 +12,9 @@
   font-size: 2.2em;
   text-align: center;
   margin: 10px;
-  min-width: fit-content;
+  min-height: 100px;
   color: rgb(17, 0, 255);
   font-weight: 600;
+  padding: 8px 4px;
+  line-height: 1.2em;
 }
